@@ -3,13 +3,13 @@ local opt = vim.opt
 -- Tab / Indentation
 
 -- set the number of spaces in a tab
-opt.tabstop = 2
+opt.tabstop = 4
 
 -- sets the number of spaces for each level of Indentation
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 
 -- set the number of spaces of a tab while in insert mode
-opt.softtabstop = 2
+opt.softtabstop = 4
 
 -- converts tabs into spaces from \t -> '   '
 opt.expandtab = true

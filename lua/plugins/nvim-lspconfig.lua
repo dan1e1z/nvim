@@ -12,6 +12,12 @@ local config = function()
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 	end
 
+    -- Key mappings for LSP actions
+    local opts = { noremap = true, silent = true }
+    vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+
 	-- lua
 	lspconfig.lua_ls.setup({
 		capabilities = capabilities,
@@ -186,7 +192,7 @@ local config = function()
 		settings = {
 			languages = {
 				lua = { luacheck, stylua },
-				python = { flake8, black },
+				-- python = { flake8, black },
 				typescript = { eslint, prettier_d },
 				json = { eslint, fixjson },
 				jsonc = { eslint, fixjson },
@@ -201,7 +207,7 @@ local config = function()
 				solidity = { solhint },
 				html = { prettier_d },
 				css = { prettier_d },
-				c = { clangformat, cpplint },
+				c = { clangformat }, -- cpplint
 				cpp = { clangformat, cpplint },
 			},
 		},
