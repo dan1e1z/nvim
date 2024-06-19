@@ -1,24 +1,22 @@
-local config = function()
-  local theme = require("lualine.themes.rose-pine")
-
-  require('lualine').setup {
-    options = {
-      theme = theme,
-      globalstatus = true,
-    },
-    sections = {
-      lualine_a = {
-        {
-          'buffers',
-        }
-      },
-    }
-  }
-end
-
 return {
-  "nvim-lualine/lualine.nvim",
-  lazy = false,
-  config = config,
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "folke/noice.nvim", "nvim-tree/nvim-web-devicons" },
+	config = function()
+		require("lualine").setup({
+			sections = {
+				lualine_x = {
+				  {
+				    require("noice").api.status.command.get,
+				    cond = require("noice").api.status.command.has,
+				    color = { fg = "#ff9e64" },
+				  },
+				  {
+				    require("noice").api.status.mode.get,
+				    cond = require("noice").api.status.mode.has,
+				    color = { fg = "#ff9e64" },
+				  },
+				},
+			},
+		})
+	end,
 }
-

@@ -1,6 +1,4 @@
 -- color scheme plugin
-
-
 return {
 	-- get color scheme from rosepine repository
 	'rose-pine/neovim',

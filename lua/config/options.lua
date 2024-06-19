@@ -42,21 +42,12 @@ opt.number = true
 -- adds relative numbers onto the right hand side
 opt.relativenumber = true
 
--- allows full color support on the terminal
--- opt.termguicolors = true
-
--- gives indication of number of characters in a line
--- opt.colorcolumn = "100"
-
 -- allows running debugger to keep gutter: keeps available space for characters
 opt.signcolumn = "yes"
 
 -- allows for automatic scrolling, preventing hitting the bottom
 opt.scrolloff = 10
 opt.cmdheight = 1
-
--- adds to selection for auto-copletetion
--- opt.completeopt = "menuone,noinsert,noselect"
 
 -- Behaviour
 
@@ -88,9 +79,6 @@ opt.splitbelow = true
 -- auto change the current directory
 opt.autochdir = false
 
--- treats words seperated by a hyphen, a single word
--- opt.iskeyword:append("-")
-
 -- always allows mouse, regardless of mode
 opt.mouse:append("a")
 
@@ -99,9 +87,6 @@ opt.clipboard:append("unnamedplus")
 
 -- allows edit of buffer
 opt.modifiable = true
-
--- gives visual of cusor
--- opt.guicursor = "n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
 -- sets current buffer to UTF-8
 opt.encoding = "UTF-8"
