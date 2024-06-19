@@ -60,17 +60,18 @@ mapkey("<C-Right>", "vertical resize -2", "n")
 -- Show Full File-Path
 mapkey("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path
 
+local api = vim.api
 -- Indenting
 
 -- allows visual mode to be kept, after > or < for indenting
 
-vim.keymap.set("v", "<", "<gv", { silent = true, noremap = true })
+api.nvim_set_keymap("v", "<", "<gv", { silent = true, noremap = true })
 -- keymap.set("v", "<", "<gv")
 
-vim.keymap.set("v", ">", ">gv", { silent = true, noremap = true })
+api.nvim_set_keymap("v", ">", ">gv", { silent = true, noremap = true })
 -- keymap.set("v", ">", ">gv")
 
-local api = vim.api
+-- local api = vim.api
 
 -- Zen Mode
 api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
