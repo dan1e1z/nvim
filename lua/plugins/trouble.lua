@@ -13,4 +13,8 @@ return {
 			other = diagnostic_signs.Info,
 		},
 	},
+
+	vim.keymap.set("n", "<leader>tt", function()
+		require("trouble").toggle("diagnostics")
+	end),
 }
