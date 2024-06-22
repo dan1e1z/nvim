@@ -36,11 +36,12 @@ return {
 		})
 
 		-- Key mappings
-		vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-		vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.code_action, {})
-		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, {})
+		vim.keymap.set("n", "D", vim.lsp.buf.hover, {}) -- Show hover information
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, {}) -- Jump to definition (full specification)
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {}) -- Jump to declaration (introduction)
+		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {}) -- Jump to implementation (actual code)
+		vim.keymap.set("n", "gr", vim.lsp.buf.references, {}) -- List all references
+		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {}) -- Trigger code actions
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {}) -- Rename symbol
 	end,
 }

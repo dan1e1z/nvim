@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
+-- Restore cursor position and center
 vim.api.nvim_create_autocmd("BufReadPost", {
 	callback = function(event)
 		local buf = event.buf

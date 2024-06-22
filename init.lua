@@ -11,6 +11,7 @@ if vim.fn.isdirectory(lazypath) == 0 then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Load leader key
 require("config.globals")
 
 -- Load and setup plugins
