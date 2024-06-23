@@ -12,13 +12,16 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
-
+			require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./custom_snippets" } })
+			-- require("luasnip.loaders.from_vscode").lazy_load({
+			-- 	paths = { vim.fn.stdpath("config") .. "/custom_snippets" },
+			-- })
 			cmp.setup({
 				formatting = { format = require("tailwindcss-colorizer-cmp").formatter },
-
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
