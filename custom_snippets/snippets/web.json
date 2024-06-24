@@ -8,15 +8,15 @@
   "functionComponent": {
     "prefix": "comp",
     "body": [
-      "const ${1:ComponentName} = () => {",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
       "    <div>",
-      "      ${0}",
+      "      ${1:${TM_FILENAME_BASE}}",
       "    </div>",
       "  )",
       "}",
       "",
-      "export default ${1:ComponentName};"
+      "export default ${1:${TM_FILENAME_BASE}};"
     ],
     "description": "Creates a React functional component."
   }

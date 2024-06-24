@@ -20,6 +20,16 @@ return {
 			capabilities = capabilities,
 		})
 
+		-- Setup for CSS language server
+		lspconfig.cssls.setup({
+			capabilities = capabilities,
+		})
+
+		-- Setup for JSON language server
+		lspconfig.jsonls.setup({
+			capabilities = capabilities,
+		})
+
 		-- Setup for Lua language server
 		lspconfig.lua_ls.setup({
 			capabilities = capabilities,

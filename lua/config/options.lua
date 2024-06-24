@@ -63,6 +63,9 @@ opt.swapfile = false
 -- no backup files
 opt.backup = false
 
+-- allows color with terminal
+opt.termguicolors = true
+
 -- allows for undo files, stored
 opt.undodir = vim.fn.expand("~/.vim/undodir")
 opt.undofile = true
