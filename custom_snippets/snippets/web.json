@@ -19,5 +19,25 @@
       "export default ${1:${TM_FILENAME_BASE}};"
     ],
     "description": "Creates a React functional component."
+  },
+  "functionCSSCompnent": {
+    "prefix": "compcss",
+    "body": [
+      "import styles from './${TM_FILENAME_BASE}.module.css';",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} = ($0) => {",
+      "  return (",
+      "    <div className={styles.container}>${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}</div>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/};"
+    ],
+    "description": "Create a functional React component with CSS module import"
+  },
+  "divCSSStyles": {
+    "prefix": "divc",
+    "body": ["<div className={styles.$0}>", "</div>"],
+    "description": "Creates a div element with a className style attribute."
   }
 }

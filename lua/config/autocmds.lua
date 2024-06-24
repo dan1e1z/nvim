@@ -21,3 +21,22 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		end
 	end,
 })
+
+-- window wsl ^M fix
+function Trim()
+	local save = vim.fn.winsaveview()
+	vim.cmd("keeppatterns %s/\\s\\+$\\|\\r$//e")
+	vim.fn.winrestview(save)
+end
+
+function Paste_and_trim()
+	-- Perform the default paste action
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("p", true, false, true), "n", false)
+	-- Call the trim function
+	vim.schedule(function()
+		Trim()
+	end)
+end
+
+-- Set up the key mapping for 'p' to use Paste_and_trim in normal mode
+vim.api.nvim_set_keymap("n", "p", ":lua Paste_and_trim()<CR>", { noremap = true, silent = true })
