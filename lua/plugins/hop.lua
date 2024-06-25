@@ -1,16 +1,17 @@
 return {
 	"smoka7/hop.nvim",
 	version = "*",
-	opts = {
-		keys = "etovxqpdygfblzhckisuran",
-	},
+	opts = {},
 	config = function()
 		require("hop").setup({})
 		local hop = require("hop")
-		vim.keymap.set({ "n", "v" }, "<leader>l", function()
+		vim.keymap.set({ "n", "x", "o" }, "s", function()
+			hop.hint_words({})
+		end)
+		vim.keymap.set({ "n", "x", "o" }, "<leader>l", function()
 			hop.hint_lines({})
 		end)
-		vim.keymap.set({ "n", "v" }, "<leader>j", function()
+		vim.keymap.set({ "n", "x", "o" }, "<leader>j", function()
 			hop.hint_lines_skip_whitespace({})
 		end)
 	end,

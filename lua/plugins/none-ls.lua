@@ -13,8 +13,8 @@ return {
 
 				-- Formatting using prettier for JavaScript, TypeScript, CSS, etc.
 				null_ls.builtins.formatting.prettierd,
-				require("none-ls.diagnostics.eslint_d"),
-				require("none-ls.code_actions.eslint_d"),
+				-- require("none-ls.diagnostics.eslint_d"),
+				-- require("none-ls.code_actions.eslint_d"),
 
 				-- Formatting using clang-format for C/C++ files
 				null_ls.builtins.formatting.clang_format,
