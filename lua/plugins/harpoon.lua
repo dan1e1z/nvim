@@ -1,6 +1,7 @@
 return {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
+	event = "VeryLazy",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	vim.keymap.set("n", "<leader>h", function()
 		require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())

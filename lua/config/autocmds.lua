@@ -39,4 +39,4 @@ function Paste_and_trim()
 end
 
 -- Set up the key mapping for 'p' to use Paste_and_trim in normal mode
-vim.api.nvim_set_keymap("n", "p", ":lua Paste_and_trim()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>p", ":lua Paste_and_trim()<CR>", { noremap = true, silent = true })
