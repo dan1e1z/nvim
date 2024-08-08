@@ -84,7 +84,8 @@ vim.opt.autochdir = false
 vim.opt.mouse:append("a")
 
 -- allows copy to outside to inside vim
-vim.opt.clipboard:append("unnamedplus")
+-- vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard = "unnamedplus"
 
 -- allows edit of buffer
 vim.opt.modifiable = true
@@ -94,3 +95,5 @@ vim.opt.encoding = "UTF-8"
 
 -- prevents x from writting into clipboard register
 vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true, silent = true })
+
+vim.opt_local.conceallevel = 2

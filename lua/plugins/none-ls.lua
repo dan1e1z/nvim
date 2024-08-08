@@ -13,20 +13,8 @@ return {
 
 				-- Formatting using prettier for JavaScript, TypeScript, CSS, etc.
 				null_ls.builtins.formatting.prettierd,
-				require("none-ls.diagnostics.eslint_d").with({
-					condition = function()
-						return require("null-ls.utils").root_pattern(
-                            "eslint.config.js",
-                            ".eslintrc",
-                            ".eslintrc.js",
-                            ".eslintrc.cjs"
-						)(vim.api.nvim_buf_get_name(0)) ~= nil
-					end,
-				}),
-
-				-- .with({
-				-- 	extra_args = { "--no-warn-ignored" },
-				-- }),
+				require("none-ls.diagnostics.eslint_d"),
+                -- require("none-ls.code_actions.eslint_d"),
 
 				-- Formatting using clang-format for C/C++ files
 				null_ls.builtins.formatting.clang_format,

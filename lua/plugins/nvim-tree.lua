@@ -5,15 +5,16 @@ return {
 	config = function()
 		vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=None]])
 		require("nvim-tree").setup({
-			filters = {
-				dotfiles = false,
+			view = {
+				side = "right",
+				adaptive_size = true,
 			},
 		})
 
 		local opts = { noremap = true, silent = true }
 
-		-- NeoTree
-		vim.keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", opts) -- Focus on NvimTree
-		vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- Toggle NvimTree visibility
+		-- NvimTree
+		local api = require("nvim-tree.api")
+		vim.keymap.set("n", "<leader>e", api.tree.toggle, opts) -- Toggle NvimTree visibility
 	end,
 }
