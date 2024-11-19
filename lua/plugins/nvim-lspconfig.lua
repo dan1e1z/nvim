@@ -4,6 +4,7 @@ return {
 	config = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local lspconfig = require("lspconfig")
+		local util = require("lspconfig.util")
 
 		-- Setup for Tailwind CSS
 		lspconfig.tailwindcss.setup({
@@ -11,7 +12,10 @@ return {
 		})
 
 		-- Setup for TypeScript Server
-		lspconfig.tsserver.setup({
+		-- lspconfig.tsserver.setup({
+		-- 	capabilities = capabilities,
+		-- })
+		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
 		})
 
@@ -43,6 +47,14 @@ return {
 		-- Setup for C/C++ language server (clangd)
 		lspconfig.clangd.setup({
 			capabilities = capabilities,
+		})
+
+		-- Setup for go language server (gopls)
+		lspconfig.gopls.setup({
+			capabilities = capabilities,
+			cmd = { "gopls" },
+			filetypes = { "go", "gomod", "gowork", "gotmpl" },
+			root_dir = util.root_pattern("go.work", "go.mod", ".git"),
 		})
 
 		-- Key mappings
