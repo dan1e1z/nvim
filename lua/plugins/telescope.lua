@@ -11,6 +11,12 @@ return {
 		local telescope = require("telescope")
 		telescope.setup({
 			defaults = {
+				sorting_strategy = "ascending",
+				layout_config = {
+					width = 0.9,
+					preview_width = 0.5,
+					prompt_position = "top",
+				},
 				file_ignore_patterns = {
 					"node_modules",
 				},

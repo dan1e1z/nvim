@@ -28,3 +28,8 @@ return {
 		require("telescope").load_extension("undo")
 	end,
 }
+
+-- Default Keybindings
+-- Enter       - copy [added] undo entry
+-- Shift+Enter - copy [removed] undo entry
+-- Ctrl+Enter  - restore to undo entry
