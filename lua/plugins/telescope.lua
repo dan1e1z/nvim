@@ -54,5 +54,6 @@ return {
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, opts)
 		vim.keymap.set("n", "<leader>fs", builtin.current_buffer_fuzzy_find, opts)
+		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, opts)
 	end,
 }

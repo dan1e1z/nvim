@@ -93,7 +93,4 @@ vim.opt.modifiable = true
 -- sets current buffer to UTF-8
 vim.opt.encoding = "UTF-8"
 
--- prevents x from writting into clipboard register
-vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true, silent = true })
-
 -- vim.opt_local.conceallevel = 2

@@ -12,9 +12,6 @@ return {
 		})
 
 		-- Setup for TypeScript Server
-		-- lspconfig.tsserver.setup({
-		-- 	capabilities = capabilities,
-		-- })
 		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
 		})

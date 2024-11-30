@@ -39,12 +39,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Load leader key
 require("config.globals")
 
--- vim.filetype.add({
--- 	extension = {
--- 		["http"] = "http",
--- 	},
--- })
---
 -- Load and setup plugins
 require("lazy").setup("plugins")
 
